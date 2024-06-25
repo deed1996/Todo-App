@@ -1,13 +1,13 @@
-# Getting Started with Create React App
+# Todo React App
 
 ## Features 
 - Toggle light and dark mode
 - Fully Responsive
 - Add new todos to the list
+- Edit todos from the list
 - Mark todos as complete
-- Delete todos from the list 
-
-## Built 
+- Delete todos from the list
+- View the total items left on the list
 
 ## Getting Started
 You will need node.js and git installed globally on your machine.
