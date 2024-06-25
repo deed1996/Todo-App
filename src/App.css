@@ -171,6 +171,10 @@ h1 {
   justify-content: space-between;
 }
 
+.Todo p {
+  cursor: pointer;
+}
+
 .TodoForm {
   margin-top: -25px;
   margin-bottom: 10px;
@@ -201,6 +205,7 @@ h1 {
 .todo-icons {
   display: flex;
   gap: 15px;
+  cursor: pointer;
 }
 
 .completed {
