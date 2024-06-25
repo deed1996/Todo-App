@@ -5,10 +5,11 @@ export const TodoForm = ({addTodo}) => {
     const [value, setValue] = useState("");
 
     const handleSubmit = (e) => {
-        if(e.key === 'Enter' && value === "") {
+        e.preventDefault();
+
+        if(value === "") {
             alert('Please enter a valid value');
         } else {
-            e.preventDefault();
             addTodo(value);
             setValue("")
         }
