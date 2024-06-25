@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --body_background: #f6f6f8;
+  --heading_colour: #fff;
+  --copy_colour: #71707d;
+  --link-colour: #71707d;
+  --heading-colour: #71707d;
+  --font-family: "Montserrat", sans-serif;
+  --font-weight_heavy: 600;
+  --font-weight_light: 500;
+}
+
+[data-theme="dark"] {
+  --body_background: #161620;
+  --copy_colour: #989bb3;
+  --link-colour: #989bb3;
+  --heading-colour: #989bb3;
+}
+
+* {
+  font-family: var(--font-family);
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.App {
+  background-color: var(--body_background);
+  color: var(--copy_colour);
+}
+
+/* Header */
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--heading_colour);
+  font-weight: var(--font-weight_heavy);
+  font-size: 2.5rem;
+}
+
+.headerBgImage {
+  background-image: url('./image/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+}
+
+[data-theme="dark"] .headerBgImage{
+  background-image: url('./image/bg-mobile-dark.jpg');
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 5% 0;
+}
+
+/* Dark/Light mode */
+.dark_mode {
+  margin-top: -20px;
+  margin-left: 10px;
+}
+
+.dark_mode_label {
+  width: 70px;
+  height: 35px;
+  position: relative;
+  display: block;
+  background: #f7f7f9;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark_mode_label:after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+  background: linear-gradient(180deg, #2c2c2c, purple);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.dark_mode_input:checked + .dark_mode_label {
+  background: var(--body_background);
+}
+.dark_mode_input:checked + .dark_mode_label:after {
+  left: 62px;
+  transform: translateX(-85%);
+  background: #6c6c6c;
+}
+.dark_mode_label:active:after {
+  width: 30px;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 25px;
+  top: 4px;
+  z-index: 100;
+}
+.dark_mode_label svg.sun {
+  left: 5px;
+  transition: 0.3s;
+}
+.dark_mode_label svg.moon {
+  left: 40px;
+  transition: 0.3s;
+}
+
+.dark_mode_label svg.moon path {
+  fill: #000;
+} 
+
+.dark_mode_input:checked + .dark_mode_label svg.moon path {
+  fill: var(--heading_colour);
+}
+
+@media (min-width:786px) {
+  .dark_mode_label {
+    width: 100px;
+    height: 50px;
+  }
+
+  .dark_mode_label svg {
+    top: 12px;
+    scale: 1.2;
+  }
+
+  .dark_mode_label svg.sun {
+    left: 10px;
+  }
+
+  .dark_mode_label svg.moon {
+    left: 65px;
+  }
+
+  .dark_mode_label:after {
+    width: 40px;
+    height: 40px;
+    top: 5px;
+  }
+
+  .dark_mode_input:checked + .dark_mode_label:after {
+    left: 91px;
+  }
+}
+
+/* Todo */
+.Todo {
+  display: flex;
+  align-items: center;
+  justify-items: start;
+  background-color: var(--heading_colour);
+  width: 85%;
+  margin: 0 auto 20px;
+  padding: 0 15px;
+  justify-content: space-between;
+}
+
+.TodoForm {
+  margin-top: -25px;
+  margin-bottom: 10px;
+}
+
+.todo-input {
+  display: block;
+  height: 40px;
+  border-radius: 5px;
+  width: 85%;
+  margin: 0 auto 20px;
+  border: 0;
+  background-color: var(--heading_colour);
+  padding: 5px 15px;
+}
+
+[data-theme="dark"] .Todo, 
+[data-theme="dark"] .todo-input { 
+  background-color: #24273c;
+  color: var(--heading_colour);
+}
+
+.todo:first-child,
+.todo:last-child {
+  border-radius: 30px;
+}
+
+.todo-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.completed {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+/* Main Section */
+.App-main {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media Queries */
+@media (min-width:980px) {
+  .headerBgImage {
+    background-image: url('./image/bg-desktop-light.jpg');
+    background-size: contain;
+    margin: 0 auto;
+    background-repeat: round;
+    height: 200px;
+  }
+  
+  [data-theme="dark"] .headerBgImage{
+    background-image: url('./image/bg-desktop-dark.jpg');
+  }
+
+
+  .header {
+    margin: 0 auto;
+  }
+
+  .header,
+  .Todo,
+  .todo-input {
+    width: 700px;
+  }
+
+  .TodoForm {
+    margin-top: -30px;
+  }
+}
