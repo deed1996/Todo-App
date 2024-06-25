@@ -212,6 +212,8 @@ h1 {
 .App-main {
   text-align: center;
   padding: 20px;
+  min-height: 500px;
+  align-content: flex-start;
 }
 
 /* Media Queries */
