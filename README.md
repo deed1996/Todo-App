@@ -1,6 +1,6 @@
 # Todo React App
 
-[![](assets/screenshot.mp4)](https://github.com/deed1996/Todo-App/assets/26143170/8002712d-cb5c-4ba5-8acd-9f5856c09374)
+[![](assets/demo.mp4)](https://github.com/deed1996/Todo-App/assets/26143170/8002712d-cb5c-4ba5-8acd-9f5856c09374)
 
 ## Features 
 - Toggle light and dark mode
