@@ -1,5 +1,7 @@
 # Todo React App
 
+![](assets/screenshot.mp4)
+
 ## Features 
 - Toggle light and dark mode
 - Fully Responsive
